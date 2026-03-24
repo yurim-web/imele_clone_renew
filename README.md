@@ -1,5 +1,7 @@
 # IMELE 클론 웹사이트
 
+🔗 **Live Demo**: https://yurim-web.github.io/imele_clone_renew/
+
 IMELE 브랜드의 뷰티 제품을 소개하는 반응형 웹사이트입니다. 미니멀리즘 디자인과 부드러운 애니메이션을 통해 브랜드의 철학을 표현합니다.
 
 ## 🚀 주요 기능
