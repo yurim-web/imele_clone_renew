@@ -1,0 +1,85 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================
+// Section 5 - Promotion
+// =====================
+.section5 {
+  padding: 150px 80px;
+  background-color: $color-section-warm;
+
+  @include mobile {
+    padding: 30px;
+  }
+}
+
+.section5_title {
+  font-size: 41px;
+  font-weight: 600;
+  transform: translateX(-99px);
+  opacity: 0;
+
+  @include mobile {
+    font-size: 21px;
+  }
+}
+
+.section5_view {
+  @include section-view;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+// =====================
+// Section 6 - Real Review
+// =====================
+.section6 {
+  padding: 120px 80px;
+  background-color: $color-section-lighter;
+
+  @include mobile {
+    padding: 30px;
+  }
+}
+
+.section6_title {
+  @include section-title;
+
+  @include mobile {
+    font-size: 21px;
+  }
+}
+
+.section6_view {
+  @include section-view;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.animation_title {
+  text-align: center;
+  color: $color-text-primary;
+  font-family: $font-newsreader;
+  opacity: 0.9;
+  line-height: 1.3;
+  font-weight: 400;
+  font-size: 31px;
+  padding: 110px 0;
+  transform: translateY(60px);
+  opacity: 0;
+
+  @include mobile {
+    font-size: 16px;
+    padding: 100px 0;
+  }
+}
+
+.widget {
+  overflow: hidden;
+  width: 100%;
+  height: 197px;
+}

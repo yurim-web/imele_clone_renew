@@ -28,152 +28,132 @@ IMELE 브랜드의 뷰티 제품을 소개하는 반응형 웹사이트입니다
 
 ### Frontend
 
-- **HTML5**: 시맨틱 마크업
+- **HTML5**: 시맨틱 마크업, 웹 접근성(alt 텍스트, lang 속성)
+- **SCSS (Dart Sass)**: CSS 전처리기를 활용한 스타일 관리
 - **CSS3**: Flexbox, Grid, 미디어 쿼리
 - **JavaScript (ES6+)**: 모던 자바스크립트
 
-### 라이브러리 & 프레임워크
+### SCSS 활용 기능
 
-- **GSAP**: 고성능 애니메이션 라이브러리
-- **Swiper.js**: 터치 슬라이더
-- **Font Awesome**: 아이콘 폰트
-- **YouTube Embed API**: 비디오 임베드
-- **Instagram Widget**: 소셜 미디어 연동
+- **변수(`$`)**: 색상, 폰트, 브레이크포인트, 레이아웃 값 관리
+- **네스팅**: 선택자 중첩으로 가독성 향상 (3단계 이내)
+- **믹스인(`@mixin`)**: 반응형 브레이크포인트, 섹션 타이틀 공통 패턴
+- **@use 모듈 시스템**: `@import` 대신 최신 Dart Sass 표준 사용
+- **파셜(`_`)**: 기능별 파일 분리 후 단일 진입점에서 통합
+
+### 라이브러리
+
+- **GSAP 3.12**: 고성능 스크롤 트리거 애니메이션
+- **Swiper 11**: 터치 슬라이더
+- **Font Awesome 6.7**: 아이콘 폰트
 
 ### 폰트
 
-- **Newsreader**: 제목용 가변 폰트
-- **Pretendard**: 본문용 한글 폰트
+- **Newsreader**: 제목용 가변 폰트 (세리프)
+- **Pretendard**: 본문용 한글 가변 폰트 (산세리프)
 
 ## 📁 프로젝트 구조
 
 ```
 imele_clone/
-├── css/                    # 스타일시트
-│   ├── common.css         # 공통 스타일
-│   ├── reset.css          # CSS 리셋
-│   ├── header.css         # 헤더 스타일
-│   ├── main.css           # 메인 섹션 스타일
-│   ├── main2.css          # 베스트셀러 섹션
-│   ├── main3.css          # 비디오 섹션
-│   ├── main4.css          # 브랜드 가치 섹션
-│   ├── footer.css         # 푸터 스타일
-│   ├── swiper.css         # PC 스와이퍼 스타일
-│   ├── mo_swiper.css      # 모바일 스와이퍼 스타일
-│   └── top_banner.css     # 상단 배너 스타일
-├── script/                # 자바스크립트
-│   ├── header.js          # 헤더 스크롤 효과
-│   ├── swiper.js          # PC 메인 배너 슬라이더
-│   ├── mo_swiper.js       # 모바일 제품 슬라이더
-│   ├── animation.js       # GSAP 스크롤 애니메이션
-│   ├── animation2.js      # 추가 애니메이션
-│   ├── animation3.js      # 추가 애니메이션
-│   └── top_banner.js      # 상단 배너 기능
-├── img/                   # 이미지 리소스
-│   ├── logo (1).png       # 메인 로고
-│   ├── footer_logo.png    # 푸터 로고
-│   ├── main_banner_*.png  # 메인 배너 이미지
-│   ├── mo_main_banner_*.jpg # 모바일 배너 이미지
-│   ├── bestceller_*.png   # 베스트셀러 제품 이미지
-│   └── banner_icon_*.png  # 브랜드 가치 아이콘
-├── font/                  # 폰트 파일
+├── scss/                       # SCSS 소스 파일
+│   ├── style.scss              # 메인 진입점 (@use로 통합)
+│   ├── _variables.scss         # 색상, 폰트, 브레이크포인트 변수
+│   ├── _mixins.scss            # 반응형 믹스인, 공통 패턴
+│   ├── _reset.scss             # CSS 리셋
+│   ├── _common.scss            # 공통 스타일, @font-face
+│   ├── _top_banner.scss        # 상단 배너
+│   ├── _header.scss            # 헤더 (네스팅 활용)
+│   ├── _main.scss              # 베스트셀러 섹션
+│   ├── _main2.scss             # 브랜드 스토리 섹션
+│   ├── _main3.scss             # 브랜드 가치 섹션
+│   ├── _main4.scss             # Promotion, Real Review 섹션
+│   ├── _swiper.scss            # PC + 모바일 스와이퍼 통합
+│   └── _footer.scss            # 푸터 스타일
+├── css/                        # 컴파일된 CSS 출력
+│   └── style.css               # SCSS 컴파일 결과물
+├── script/                     # 자바스크립트
+│   ├── header.js               # 헤더 스크롤 효과
+│   ├── swiper.js               # PC 메인 배너 슬라이더
+│   ├── mo_swiper.js            # 모바일 제품 슬라이더
+│   ├── animation.js            # GSAP 스크롤 애니메이션
+│   ├── animation2.js           # 추가 애니메이션
+│   ├── animation3.js           # 추가 애니메이션
+│   └── top_banner.js           # 상단 배너 기능
+├── img/                        # 이미지 리소스
+├── font/                       # 폰트 파일
 │   ├── Newsreader-VariableFont_opsz,wght.ttf
 │   └── PretendardVariable.ttf
-└── index.html             # 메인 HTML 파일
+├── index.html                  # 메인 HTML 파일
+├── package.json                # 프로젝트 설정 및 빌드 스크립트
+└── .gitignore
 ```
-
-## 🎯 주요 섹션
-
-### 1. 상단 배너
-
-- 신규 회원가입 이벤트 안내
-- 자동 슬라이드 애니메이션
-
-### 2. 헤더
-
-- 고정형 네비게이션
-- 스크롤 시 배경색 변화
-- 모바일 햄버거 메뉴
-
-### 3. 메인 배너
-
-- 제품 소개 슬라이드쇼
-- 자동 재생 및 네비게이션
-- PC/모바일 최적화
-
-### 4. 베스트셀러
-
-- 4개 인기 제품 그리드 레이아웃
-- 모바일에서는 스와이퍼로 전환
-- 제품명, 설명, 가격 정보
-
-### 5. 브랜드 스토리
-
-- YouTube 비디오 임베드
-- 브랜드 철학 소개
-- "Read more" 링크
-
-### 6. 브랜드 가치
-
-- 4가지 핵심 가치 아이콘
-- Plant-Based, Organic, Vegan, Cruelty Free
-
-### 7. 실제 리뷰
-
-- Instagram 위젯 연동
-- 고객 후기 및 사용 사진
-
-### 8. 푸터
-
-- 고객센터 정보
-- 회사 정보
-- 소셜 미디어 링크
-- PC/모바일 별도 레이아웃
 
 ## 🚀 실행 방법
 
-1. 프로젝트 클론 또는 다운로드
-2. 웹 서버에 파일 업로드 또는 로컬 서버 실행
-3. `index.html` 파일을 브라우저에서 열기
-
 ```bash
-# 로컬 서버 실행 예시 (Python)
-python -m http.server 8000
+# 1. 의존성 설치
+npm install
 
-# 또는 Node.js
-npx http-server
+# 2. SCSS 컴파일 (1회)
+npm run build:css
+
+# 3. 개발 시 실시간 감시 모드
+npm run watch:css
+
+# 4. 브라우저에서 index.html 열기
 ```
 
 ## 📱 반응형 브레이크포인트
 
-- **PC**: 1000px 이상
-- **모바일**: 1000px 미만
+| 디바이스 | 너비 | 레이아웃 |
+|----------|------|----------|
+| PC | 1000px 초과 | 4열 그리드, 전체 네비게이션 |
+| 모바일 | 1000px 이하 | 1~2열 레이아웃, 햄버거 메뉴 |
 
 ## 🎨 디자인 특징
 
-- **컬러 팔레트**: 자연스러운 베이지, 그레이 톤
-- **타이포그래피**: 세리프와 산세리프 폰트 조합
+- **컬러 팔레트**: 자연스러운 베이지, 그레이 톤 (`#f0edec`, `#f7f7f5`, `#47433f`)
+- **타이포그래피**: 세리프(Newsreader)와 산세리프(Pretendard) 폰트 조합
 - **레이아웃**: 미니멀하고 깔끔한 그리드 시스템
-- **애니메이션**: 부드럽고 자연스러운 전환 효과
+- **애니메이션**: GSAP ScrollTrigger 기반 부드러운 전환 효과
 
 ## 🔧 커스터마이징
 
 ### 색상 변경
 
-`css/common.css`에서 CSS 변수를 수정하여 전체 색상 테마를 변경할 수 있습니다.
+`scss/_variables.scss`에서 SCSS 변수를 수정한 후 `npm run build:css`로 컴파일합니다.
 
-### 애니메이션 조정
+```scss
+// scss/_variables.scss
+$color-body-bg: #f0edec;
+$color-text-primary: #47433f;
+$color-accent: #df6e3a;
+```
 
-`script/animation.js`에서 GSAP 애니메이션의 지속시간과 효과를 조정할 수 있습니다.
+### 반응형 브레이크포인트 변경
 
-### 제품 정보 수정
+```scss
+// scss/_variables.scss
+$breakpoint-mobile: 1000px;
+```
 
-`index.html`의 베스트셀러 섹션에서 제품명, 설명, 가격을 수정할 수 있습니다.
+### 믹스인 사용 예시
+
+```scss
+// 반응형 모바일 적용
+.section {
+  padding: 100px 80px;
+
+  @include mobile {
+    padding: 30px;
+  }
+}
+```
 
 ## 📄 라이선스
 
 이 프로젝트는 교육 목적으로 제작된 클론 프로젝트입니다.
-
 
 ---
 

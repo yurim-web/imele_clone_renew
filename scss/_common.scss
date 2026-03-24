@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  background-color: $color-body-bg;
+  font-family: $font-pretendard;
+}
+
+@font-face {
+  font-family: 'pretendard';
+  src: url('../font/PretendardVariable.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'newsreader';
+  src: url('../font/Newsreader-VariableFont_opsz\,wght.ttf') format('truetype');
+}

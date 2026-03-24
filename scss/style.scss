@@ -1,0 +1,13 @@
+// IMELE Clone - Main Entry Point
+// 모든 partial을 @use로 통합
+
+@use 'reset';
+@use 'common';
+@use 'top_banner';
+@use 'header';
+@use 'main';
+@use 'main2';
+@use 'main3';
+@use 'main4';
+@use 'swiper';
+@use 'footer';

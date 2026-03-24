@@ -1,0 +1,69 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================
+// Section 3 - Meet the Founders
+// =====================
+.section3 {
+  width: 100vw;
+  height: 500px;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.video {
+  flex: 1;
+}
+
+.video_container {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-section-warm;
+  color: $color-text-primary;
+}
+
+.section3_title {
+  font-size: 35px;
+  font-weight: 500;
+  font-family: $font-newsreader;
+  margin-bottom: 30px;
+  transform: translateY(-20px);
+  opacity: 0;
+
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
+.section3_detail {
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+  padding-bottom: 22px;
+  transform: translateY(20px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
+.section3_read {
+  margin-top: 20px;
+  text-decoration: underline;
+  line-height: 1.2;
+  font-size: 17px;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 13px;
+  }
+}

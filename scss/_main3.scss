@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================
+// Section 4 - Brand Values
+// =====================
+.section4 {
+  background-color: $color-section-light;
+  padding: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 100px 50px;
+  }
+}
+
+.icon_box_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-60px);
+  opacity: 0;
+}
+
+.icon_box_down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(60px);
+  opacity: 0;
+}
+
+.icon_img {
+  height: 115px;
+  width: 75px;
+  padding: 0 0 30px;
+  object-fit: contain;
+}
+
+.icon_title {
+  line-height: 1.2;
+  font-size: 16px;
+  color: $color-accent;
+  font-weight: 600;
+}
+
+.icon_detail {
+  font-size: 16px;
+  color: $color-text-primary;
+  opacity: 0.8;
+  padding: 12px;
+}

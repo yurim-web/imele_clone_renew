@@ -1,0 +1,80 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================
+// Section 2 - Bestseller
+// =====================
+.section2 {
+  padding: 100px 80px 250px 80px;
+  background-color: $color-section-light;
+
+  @include mobile {
+    padding: 60px 30px 100px 30px;
+  }
+}
+
+.title_box {
+  display: flex;
+  color: $color-text-secondary;
+  justify-content: space-between;
+  padding: 20px 0 30px 0;
+  font-family: $font-newsreader;
+}
+
+.section2_title {
+  @include section-title;
+
+  @include mobile {
+    font-size: 21px;
+  }
+}
+
+.section2_view {
+  @include section-view;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.bestceller_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.bestceller_box > img {
+  width: 100%;
+}
+
+.best_name {
+  color: $color-text-primary;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 10px 0 5px 0;
+}
+
+.best_subtitle {
+  color: $color-text-muted;
+  font-weight: 400;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.best_price {
+  color: $color-text-primary;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mo_bestceller_container {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}

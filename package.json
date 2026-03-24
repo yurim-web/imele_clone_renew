@@ -1,0 +1,12 @@
+{
+  "name": "imele-clone",
+  "version": "1.0.0",
+  "description": "IMELE 공식몰 클론 웹사이트",
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css --no-source-map",
+    "watch:css": "sass scss/style.scss css/style.css --no-source-map --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

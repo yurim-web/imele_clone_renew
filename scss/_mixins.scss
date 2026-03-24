@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+// 반응형 모바일 믹스인
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Flex 센터 정렬
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 섹션 타이틀 공통 스타일 (Bestseller, Promotion, Real Review)
+@mixin section-title($size: 41px) {
+  font-size: $size;
+  font-weight: 600;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+// 섹션 View all 공통 스타일
+@mixin section-view($size: 31px) {
+  font-size: $size;
+  font-weight: 400;
+  transform: translateX(100px);
+  opacity: 0;
+}
